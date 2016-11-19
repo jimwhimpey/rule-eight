@@ -17,8 +17,8 @@ app.use(function(req, res, next) {
 	}
 });
 
-app.get('/', function (req, res) {
-	superagent.get("https://api.darksky.net/forecast/" + process.env.REACT_APP_DARKSKY_SECRET + "/37.8267,-122.4233").end(function(err, response) {
+app.get('/:latlong', function (req, res) {
+	superagent.get("https://api.darksky.net/forecast/" + process.env.REACT_APP_DARKSKY_SECRET + "/" + req.params.latlong).end(function(err, response) {
 		res.setHeader('Content-Type', 'application/json');
 		res.send(response.text);
 	});

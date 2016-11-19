@@ -6,19 +6,41 @@ class Location extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {name: props.name};
+		this.state = {
+			name: props.name,
+			units: "us",
+			loading: true,
+			latlong: props.latlong
+		};
 	}
 
 	componentDidMount() {
 		var component = this;
-		superagent.get("http://localhost:3001/").end(function(err, res) {
+		superagent.get("http://localhost:3001/" + this.state.latlong).end(function(err, res) {
 			console.log(res.body);
-			component.setState({data: res});
+			component.setState({
+				weather: res.body,
+				loading: false
+			});
 		});
 	}
 
 	render() {
-		return <h2>{this.state.name}</h2>;
+		if (this.state.loading) {
+			return (<li>
+				<h2>{this.state.name}</h2>
+				<ul>
+					<li>Loading</li>
+				</ul>
+			</li>);
+		} else {
+			return (<li>
+				<h2>{this.state.name}</h2>
+				<ul>
+					<li>Currently: {this.state.weather.currently.apparentTemperature}</li>
+				</ul>
+			</li>);
+		}
 	}
 
 }
@@ -29,7 +51,7 @@ class App extends Component {
 			<div>
 				<h1>Rule Nine</h1>
 				<ul>
-					<li><Location name="San Francisco" /></li>
+					<Location name="San Francisco" latlong="37.757815,-122.5076401" />
 				</ul>
 			</div>
 		);
