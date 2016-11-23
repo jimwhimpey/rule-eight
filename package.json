@@ -18,6 +18,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "start-proxy": "node src/proxy.js",
-    "prod-start": "react-scripts build && npm run start-proxy & pushstate-server build &"
+    "prod-start": "react-scripts build && npm run start-proxy & pushstate-server build &",
+    "deploy": "sh scripts/deploy.sh"
   }
 }
