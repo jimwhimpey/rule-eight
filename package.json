@@ -19,6 +19,6 @@
     "eject": "react-scripts eject",
     "start-proxy": "node src/proxy.js",
     "prod-start": "react-scripts build && npm run start-proxy & pushstate-server build &",
-    "deploy": "sh scripts/deploy.sh"
+    "deploy": "git push mini master && sh scripts/deploy.sh"
   }
 }
