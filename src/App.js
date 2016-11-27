@@ -17,7 +17,7 @@ class Location extends Component {
 
 	componentDidMount() {
 		var component = this;
-		superagent.get("http://localhost:3001/" + this.state.latlong).end(function(err, res) {
+		superagent.get("http://" + window.location.host.match(/^(.+)\:/)[1] + ":3001/" + this.state.latlong).end(function(err, res) {
 			console.log(res.body);
 			component.setState({
 				weather: res.body,
