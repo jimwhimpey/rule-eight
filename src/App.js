@@ -90,7 +90,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Rule Nine Test Deploy</h1>
+				<h1>Rule Nine Test Deploy 4</h1>
 				<ul>
 					<Location name="San Francisco" latlong="37.757815,-122.5076401" />
 				</ul>
