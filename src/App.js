@@ -17,8 +17,7 @@ class Location extends Component {
 
 	componentDidMount() {
 		var component = this;
-		debugger;
-		superagent.get("http://" + window.location.host.match(/^(.+)\:/)[1] + ":3001/" + this.state.latlong).end(function(err, res) {
+		superagent.get("http://" + window.location.host.match(/^(.+):/)[1] + ":3001/" + this.state.latlong).end(function(err, res) {
 			console.log(res.body);
 			component.setState({
 				weather: res.body,
@@ -83,14 +82,13 @@ class Location extends Component {
 			</li>);
 		}
 	}
-
 }
 
 class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Rule Nine Test Deploy 4</h1>
+				<h1>Rule Nine</h1>
 				<ul>
 					<Location name="San Francisco" latlong="37.757815,-122.5076401" />
 				</ul>
