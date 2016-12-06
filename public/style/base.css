@@ -1,3 +1,14 @@
 body {
-  padding: 0;
-  background: grey; }
+  font-family: "Operator Mono Light", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif; }
+
+h1 {
+  padding: 1.2vh 4vw;
+  background: #e6e6e6;
+  font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4vw;
+  border-bottom: 1px solid #999999; }
+
+h2 {
+  background: #dbdbdb;
+  padding: 2vh 4vw; }
