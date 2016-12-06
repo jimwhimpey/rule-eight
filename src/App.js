@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import WeatherUnit from './WeatherUnit.js';
 import superagent from 'superagent';
-import './App.css';
 
 class Location extends Component {
 
