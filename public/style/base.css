@@ -12,3 +12,6 @@ h1 {
 h2 {
   background: #dbdbdb;
   padding: 2vh 4vw; }
+
+.now {
+  border-bottom: 1px solid #dbdbdb; }

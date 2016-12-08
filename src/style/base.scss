@@ -18,3 +18,7 @@ h2 {
 	background: lighten($baseColor, 26%);
 	padding: 2vh $gutter;
 }
+
+.now {
+	border-bottom: 1px solid lighten($baseColor, 26%);
+}

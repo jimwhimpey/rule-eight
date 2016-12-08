@@ -36,11 +36,10 @@ class Location extends Component {
 		} else {
 			return (<li>
 				<h2>{this.state.name}</h2>
-				<ul>
-					<li>
-						<h3>Currently</h3>
-						<WeatherUnit data={this.state.weather.currently} />
-					</li>
+				<div className="now">
+					<WeatherUnit data={this.state.weather.currently} />
+				</div>
+				<ul className="soon">
 					<li>
 						<h3>+1 hour</h3>
 						<WeatherUnit data={this.state.weather.hourly.data[0]} />
@@ -57,6 +56,8 @@ class Location extends Component {
 						<h3>+4 hours</h3>
 						<WeatherUnit data={this.state.weather.hourly.data[4]} />
 					</li>
+				</ul>
+				<ul className="later">
 					<li>
 						<h3>Tomorrow</h3>
 						<WeatherUnit data={this.state.weather.daily.data[1]} />
