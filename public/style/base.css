@@ -13,5 +13,21 @@ h2 {
   background: #dbdbdb;
   padding: 2vh 4vw; }
 
-.now {
+.now_and_soon {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
   border-bottom: 1px solid #dbdbdb; }
+  .now_and_soon li {
+    flex: 1 1 auto; }
+  .now_and_soon h3 {
+    padding: 1vh 2vw;
+    font-size: 0.8rem; }
+  .now_and_soon .icon {
+    font-size: 34px;
+    padding: 2vw; }
+
+@media (max-width: 480px) {
+  .now_and_soon .summary,
+  .now_and_soon .label {
+    display: none; } }

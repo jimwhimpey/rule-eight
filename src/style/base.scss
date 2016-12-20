@@ -1,12 +1,12 @@
 $baseColor: #999999;
-$gutter: 4vw;
+$gutter: 2vw;
 
 body {
 	font-family: "Operator Mono Light", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 h1 {
-	padding: 1.2vh $gutter;
+	padding: 1.2vh $gutter * 2;
 	background: lighten($baseColor, 30%);
 	font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
 	text-transform: uppercase;
@@ -16,9 +16,31 @@ h1 {
 
 h2 {
 	background: lighten($baseColor, 26%);
-	padding: 2vh $gutter;
+	padding: 2vh $gutter * 2;
 }
 
-.now {
+.now_and_soon {
+
+	display: flex;
+	flex-direction: row;
+	text-align: center;
 	border-bottom: 1px solid lighten($baseColor, 26%);
+
+	li { flex: 1 1 auto; }
+	h3 {
+		padding: 1vh $gutter;
+		font-size: 0.8rem;
+	}
+	.icon {
+		font-size: 34px;
+		padding: $gutter;
+	}
+
+}
+
+@media (max-width: 480px) {
+	.now_and_soon {
+		.summary,
+		.label { display: none; }
+	}
 }

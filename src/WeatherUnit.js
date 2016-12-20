@@ -24,26 +24,28 @@ class WeatherUnit extends Component {
 	constructor(props) {
 		super(props);
 		this.state = props.data;
+		this.state.units = props.units;
 	}
 
 	render() {
 		if (this.state.apparentTemperatureMin && this.state.apparentTemperatureMax) {
 			return (<ul>
-				<li>{this.state.summary}</li>
-				<li>Min: {this.state.apparentTemperatureMin}</li>
-				<li>Max: {this.state.apparentTemperatureMax}</li>
-				<li>Rain chance: {this.state.precipProbability}</li>
-				<li>Wind dir: {this.state.windBearing}</li>
-				<li>Wind dir: {this.state.windSpeed}</li>
+				<li className="summary">{this.state.summary}</li>
+				<li className="icon">{iconToEmoji(this.state.icon)}</li>
+				<li className="min_temp"><span className="label">Min:</span> {this.state.apparentTemperatureMin}</li>
+				<li className="max_temp"><span className="label">Max:</span> {this.state.apparentTemperatureMax}</li>
+				<li className="rain_chance"><span className="label">Rain chance:</span> {this.state.precipProbability}</li>
+				<li className="wind_direction"><span className="label">Wind dir:</span> {this.state.windBearing}</li>
+				<li className="wind_speed"><span className="label">Wind speed:</span> {this.state.windSpeed}</li>
 			</ul>);
 		} else {
 			return (<ul>
-				<li>{this.state.summary}</li>
-				<li>{iconToEmoji(this.state.icon)}</li>
-				<li>Temp: {this.state.apparentTemperature}</li>
-				<li>Rain chance: {this.state.precipProbability}</li>
-				<li>Wind dir: {this.state.windBearing}</li>
-				<li>Wind dir: {this.state.windSpeed}</li>
+				<li className="summary">{this.state.summary}</li>
+				<li className="icon">{iconToEmoji(this.state.icon)}</li>
+				<li className="temp"><span className="label">Temp:</span> {Math.round(this.state.apparentTemperature)}<span className="units">{this.state.units}</span></li>
+				<li className="rain_chance"><span className="label">Rain chance:</span> {this.state.precipProbability}</li>
+				<li className="wind_direction"><span className="label">Wind dir:</span> {this.state.windBearing}</li>
+				<li className="wind_speed"><span className="label">Wind speed:</span> {this.state.windSpeed}</li>
 			</ul>);
 		}
 	}

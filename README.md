@@ -12,3 +12,5 @@
 * Reverse geo lookup for locations
 * Store locations somewhere
 * On mobile grab GPS data
+* Switch between farenheit and celcius
+* Adding new locations
