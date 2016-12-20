@@ -17,6 +17,7 @@ h1 {
 h2 {
 	background: lighten($baseColor, 26%);
 	padding: 2vh $gutter * 2;
+	border-bottom: 1px solid $baseColor;
 }
 
 .now_and_soon {
@@ -33,7 +34,26 @@ h2 {
 	}
 	.icon {
 		font-size: 34px;
-		padding: $gutter;
+		padding: 1vh $gutter;
+	}
+	.temp {
+		padding: 1vh 0;
+		.units {
+			color: lighten(#000, 60%);
+			font-size: 0.8rem;
+		}
+	}
+	.rain_chance {
+		padding: 1vh 0;
+		&:before {
+			content: "☂️";
+			filter: grayscale(100%);
+			opacity: 0.5;
+			font-size: 0.7rem;
+			margin-right: -4px;
+			position: relative;
+			top: -1px;
+		}
 	}
 
 }

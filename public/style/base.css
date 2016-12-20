@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Operator Mono Light", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif; }
 
@@ -11,7 +12,8 @@ h1 {
 
 h2 {
   background: #dbdbdb;
-  padding: 2vh 4vw; }
+  padding: 2vh 4vw;
+  border-bottom: 1px solid #999999; }
 
 .now_and_soon {
   display: flex;
@@ -25,7 +27,22 @@ h2 {
     font-size: 0.8rem; }
   .now_and_soon .icon {
     font-size: 34px;
-    padding: 2vw; }
+    padding: 1vh 2vw; }
+  .now_and_soon .temp {
+    padding: 1vh 0; }
+    .now_and_soon .temp .units {
+      color: #999999;
+      font-size: 0.8rem; }
+  .now_and_soon .rain_chance {
+    padding: 1vh 0; }
+    .now_and_soon .rain_chance:before {
+      content: "☂️";
+      filter: grayscale(100%);
+      opacity: 0.5;
+      font-size: 0.7rem;
+      margin-right: -4px;
+      position: relative;
+      top: -1px; }
 
 @media (max-width: 480px) {
   .now_and_soon .summary,
