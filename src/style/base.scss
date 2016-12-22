@@ -29,7 +29,7 @@ h2 {
 
 	li { flex: 1 1 auto; }
 	h3 {
-		padding: 1vh $gutter;
+		padding: 2vh $gutter 1vh;
 		font-size: 0.8rem;
 	}
 	.icon {
@@ -60,8 +60,12 @@ h2 {
 		text-align: center;
 		.speed {
 			margin: -5px 0 0 0;
-			padding: 0 0 1vh;
-			font-size: 12px;
+			padding: 0 0 2vh;
+			font-size: 0.8rem;
+			.units {
+				color: lighten(#000, 60%);
+				font-size: 0.8rem;
+			}
 		}
 		svg {
 			transform: scale(0.6);

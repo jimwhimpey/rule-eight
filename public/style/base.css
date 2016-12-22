@@ -23,7 +23,7 @@ h2 {
   .now_and_soon li {
     flex: 1 1 auto; }
   .now_and_soon h3 {
-    padding: 1vh 2vw;
+    padding: 2vh 2vw 1vh;
     font-size: 0.8rem; }
   .now_and_soon .icon {
     font-size: 34px;
@@ -47,8 +47,11 @@ h2 {
     text-align: center; }
     .now_and_soon .wind .speed {
       margin: -5px 0 0 0;
-      padding: 0 0 1vh;
-      font-size: 12px; }
+      padding: 0 0 2vh;
+      font-size: 0.8rem; }
+      .now_and_soon .wind .speed .units {
+        color: #999999;
+        font-size: 0.8rem; }
     .now_and_soon .wind svg {
       transform: scale(0.6);
       opacity: 0.3; }

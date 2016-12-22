@@ -6,7 +6,8 @@ class Wind extends Component {
 		super(props);
 		this.state = {
 			bearing: props.bearing,
-			speed: props.speed
+			speed: props.speed,
+			unitsSpeed: props.unitsSpeed
 		};
 	}
 
@@ -18,7 +19,7 @@ class Wind extends Component {
 					<polyline fill="none" points="20,3 20,37" />
 				</g>
 			</svg>
-			<div className="speed">{this.state.speed}</div>
+			<div className="speed">{Math.round(this.state.speed)}<span className="units">{this.state.unitsSpeed}</span></div>
 		</div>);
 	}
 

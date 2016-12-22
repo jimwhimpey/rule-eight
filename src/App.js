@@ -8,7 +8,8 @@ class Location extends Component {
 		super(props);
 		this.state = {
 			name: props.name,
-			units: "\u00B0F",
+			unitsTemp: "\u00B0F",
+			unitsSpeed: "mph",
 			loading: true,
 			latlong: props.latlong
 		};
@@ -40,45 +41,45 @@ class Location extends Component {
 				<ul className="now_and_soon">
 					<li>
 						<h3>Now</h3>
-						<WeatherUnit data={this.state.weather.currently} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.currently} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
 						<h3>+1hr</h3>
-						<WeatherUnit data={this.state.weather.hourly.data[0]} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.hourly.data[0]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
 						<h3>+2hrs</h3>
-						<WeatherUnit data={this.state.weather.hourly.data[1]} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.hourly.data[1]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
 						<h3>+4hrs</h3>
-						<WeatherUnit data={this.state.weather.hourly.data[4]} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.hourly.data[4]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
 						<h3>+8hrs</h3>
-						<WeatherUnit data={this.state.weather.hourly.data[8]} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.hourly.data[8]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 				</ul>
 				<ul className="later">
 					<li>
 						<h3>Tomorrow</h3>
-						<WeatherUnit data={this.state.weather.daily.data[1]} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.daily.data[1]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
 						<h3>+2 days</h3>
-						<WeatherUnit data={this.state.weather.daily.data[2]} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.daily.data[2]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
 						<h3>+3 days</h3>
-						<WeatherUnit data={this.state.weather.daily.data[3]} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.daily.data[3]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
 						<h3>+4 days</h3>
-						<WeatherUnit data={this.state.weather.daily.data[4]} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.daily.data[4]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
 						<h3>+5 days</h3>
-						<WeatherUnit data={this.state.weather.daily.data[5]} units={this.state.units} />
+						<WeatherUnit data={this.state.weather.daily.data[5]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 				</ul>
 			</li>);

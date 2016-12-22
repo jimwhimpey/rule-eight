@@ -24,7 +24,8 @@ class WeatherUnit extends Component {
 
 	constructor(props) {
 		super(props);
-		props.data.units = props.units;
+		props.data.unitsTemp = props.unitsTemp;
+		props.data.unitsSpeed = props.unitsSpeed;
 		this.state = props.data;
 	}
 
@@ -43,10 +44,10 @@ class WeatherUnit extends Component {
 			return (<ul>
 				<li className="summary">{this.state.summary}</li>
 				<li className="icon">{iconToEmoji(this.state.icon)}</li>
-				<li className="temp"><span className="label">Temp:</span> {Math.round(this.state.apparentTemperature)}<span className="units">{this.state.units}</span></li>
+				<li className="temp"><span className="label">Temp:</span> {Math.round(this.state.apparentTemperature)}<span className="units">{this.state.unitsTemp}</span></li>
 				<li className="rain_chance"><span className="label">Rain chance:</span> {this.state.precipProbability}%</li>
 				<li className="wind"><span className="label">Wind:</span>
-					<Wind bearing={this.state.windBearing} speed={this.state.windSpeed} />
+					<Wind bearing={this.state.windBearing} speed={this.state.windSpeed} unitsSpeed={this.state.unitsSpeed} />
 				</li>
 			</ul>);
 		}
