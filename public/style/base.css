@@ -15,27 +15,33 @@ h2 {
   padding: 2vh 4vw;
   border-bottom: 1px solid #999999; }
 
-.now_and_soon {
+.forecast {
   display: flex;
   flex-direction: row;
   text-align: center;
   border-bottom: 1px solid #dbdbdb; }
-  .now_and_soon li {
+  .forecast li {
     flex: 1 1 auto; }
-  .now_and_soon h3 {
+  .forecast h3 {
     padding: 2vh 2vw 1vh;
     font-size: 0.8rem; }
-  .now_and_soon .icon {
+  .forecast .icon {
     font-size: 34px;
     padding: 1vh 2vw; }
-  .now_and_soon .temp {
+  .forecast .temp {
     padding: 1vh 0; }
-    .now_and_soon .temp .units {
+    .forecast .temp .units {
       color: #999999;
       font-size: 0.8rem; }
-  .now_and_soon .rain_chance {
+    .forecast .temp.temp_min {
+      color: #00a1df;
+      padding-bottom: 0.2vh; }
+    .forecast .temp.temp_max {
+      color: #8b0000;
+      padding-top: 0.2vh; }
+  .forecast .rain_chance {
     padding: 1vh 0; }
-    .now_and_soon .rain_chance:before {
+    .forecast .rain_chance:before {
       content: "☂️";
       filter: grayscale(100%);
       opacity: 0.5;
@@ -43,23 +49,23 @@ h2 {
       margin-right: -4px;
       position: relative;
       top: -1px; }
-  .now_and_soon .wind {
+  .forecast .wind {
     text-align: center; }
-    .now_and_soon .wind .speed {
+    .forecast .wind .speed {
       margin: -5px 0 0 0;
       padding: 0 0 2vh;
       font-size: 0.8rem; }
-      .now_and_soon .wind .speed .units {
+      .forecast .wind .speed .units {
         color: #999999;
         font-size: 0.8rem; }
-    .now_and_soon .wind svg {
+    .forecast .wind svg {
       transform: scale(0.6);
       opacity: 0.3; }
-      .now_and_soon .wind svg polyline {
+      .forecast .wind svg polyline {
         stroke: black;
         stroke-width: 4px; }
 
 @media (max-width: 480px) {
-  .now_and_soon .summary,
-  .now_and_soon .label {
+  .forecast .summary,
+  .forecast .label {
     display: none; } }

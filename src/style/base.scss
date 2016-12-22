@@ -20,7 +20,7 @@ h2 {
 	border-bottom: 1px solid $baseColor;
 }
 
-.now_and_soon {
+.forecast {
 
 	display: flex;
 	flex-direction: row;
@@ -32,17 +32,28 @@ h2 {
 		padding: 2vh $gutter 1vh;
 		font-size: 0.8rem;
 	}
+
 	.icon {
 		font-size: 34px;
 		padding: 1vh $gutter;
 	}
+
 	.temp {
 		padding: 1vh 0;
 		.units {
 			color: lighten(#000, 60%);
 			font-size: 0.8rem;
 		}
+		&.temp_min {
+			color: #00a1df;
+			padding-bottom: 0.2vh;
+		}
+		&.temp_max {
+			color: #8b0000;
+			padding-top: 0.2vh;
+		}
 	}
+
 	.rain_chance {
 		padding: 1vh 0;
 		&:before {
@@ -80,7 +91,7 @@ h2 {
 }
 
 @media (max-width: 480px) {
-	.now_and_soon {
+	.forecast {
 		.summary,
 		.label { display: none; }
 	}

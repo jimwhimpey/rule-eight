@@ -34,18 +34,19 @@ class WeatherUnit extends Component {
 			return (<ul>
 				<li className="summary">{this.state.summary}</li>
 				<li className="icon">{iconToEmoji(this.state.icon)}</li>
-				<li className="min_temp"><span className="label">Min:</span> {this.state.apparentTemperatureMin}</li>
-				<li className="max_temp"><span className="label">Max:</span> {this.state.apparentTemperatureMax}</li>
-				<li className="rain_chance"><span className="label">Rain chance:</span> {this.state.precipProbability}</li>
-				<li className="wind_direction"><span className="label">Wind dir:</span> {this.state.windBearing}</li>
-				<li className="wind_speed"><span className="label">Wind speed:</span> {this.state.windSpeed}</li>
+				<li className="temp temp_min"><span className="label">Min:</span> {Math.round(this.state.apparentTemperatureMin)}<span className="units">{this.state.unitsTemp}</span></li>
+				<li className="temp temp_max"><span className="label">Max:</span> {Math.round(this.state.apparentTemperatureMax)}<span className="units">{this.state.unitsTemp}</span></li>
+				<li className="rain_chance" style={{opacity: Math.max(0.2, Math.round(this.state.precipProbability * 100) / 100)}}><span className="label">Rain chance:</span> {Math.round(this.state.precipProbability * 100)}%</li>
+				<li className="wind"><span className="label">Wind:</span>
+					<Wind bearing={this.state.windBearing} speed={this.state.windSpeed} unitsSpeed={this.state.unitsSpeed} />
+				</li>
 			</ul>);
 		} else {
 			return (<ul>
 				<li className="summary">{this.state.summary}</li>
 				<li className="icon">{iconToEmoji(this.state.icon)}</li>
 				<li className="temp"><span className="label">Temp:</span> {Math.round(this.state.apparentTemperature)}<span className="units">{this.state.unitsTemp}</span></li>
-				<li className="rain_chance"><span className="label">Rain chance:</span> {this.state.precipProbability}%</li>
+				<li className="rain_chance" style={{opacity: Math.max(0.2, Math.round(this.state.precipProbability * 100) / 100)}}><span className="label">Rain chance:</span> {Math.round(this.state.precipProbability * 100)}%</li>
 				<li className="wind"><span className="label">Wind:</span>
 					<Wind bearing={this.state.windBearing} speed={this.state.windSpeed} unitsSpeed={this.state.unitsSpeed} />
 				</li>
