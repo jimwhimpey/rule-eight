@@ -24,8 +24,8 @@ class WeatherUnit extends Component {
 
 	constructor(props) {
 		super(props);
+		props.data.units = props.units;
 		this.state = props.data;
-		this.state.units = props.units;
 	}
 
 	render() {

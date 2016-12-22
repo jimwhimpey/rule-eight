@@ -43,6 +43,18 @@ h2 {
       margin-right: -4px;
       position: relative;
       top: -1px; }
+  .now_and_soon .wind {
+    text-align: center; }
+    .now_and_soon .wind .speed {
+      margin: -5px 0 0 0;
+      padding: 0 0 1vh;
+      font-size: 12px; }
+    .now_and_soon .wind svg {
+      transform: scale(0.6);
+      opacity: 0.3; }
+      .now_and_soon .wind svg polyline {
+        stroke: black;
+        stroke-width: 4px; }
 
 @media (max-width: 480px) {
   .now_and_soon .summary,

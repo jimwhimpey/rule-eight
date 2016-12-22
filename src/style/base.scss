@@ -56,6 +56,23 @@ h2 {
 		}
 	}
 
+	.wind {
+		text-align: center;
+		.speed {
+			margin: -5px 0 0 0;
+			padding: 0 0 1vh;
+			font-size: 12px;
+		}
+		svg {
+			transform: scale(0.6);
+			opacity: 0.3;
+			polyline {
+				stroke: black;
+				stroke-width: 4px;
+			}
+		}
+	}
+
 }
 
 @media (max-width: 480px) {

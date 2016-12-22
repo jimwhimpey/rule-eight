@@ -11,9 +11,15 @@ class Wind extends Component {
 	}
 
 	render() {
-		return (<svg width="70" height="50" xmlns="http://www.w3.org/2000/svg" version="1.1">
-			<polyline points="65 20 5 20 20 5 5 20 20 35" stroke="rgba(0,0,0,1)" strokeWidth="6" strokeLinecap="round" fill="none" strokeLinejoin="round"></polyline>
-		</svg>);
+		return (<div className="inner">
+			<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+				<g transform={"rotate(" + this.props.bearing + " 20 20)"}>
+					<polyline fill="none" points="10,15 20,3 30,15" />
+					<polyline fill="none" points="20,3 20,37" />
+				</g>
+			</svg>
+			<div className="speed">{this.state.speed}</div>
+		</div>);
 	}
 
 }
