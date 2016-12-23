@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import WeatherUnit from './WeatherUnit.js';
 import superagent from 'superagent';
 
+var dayToShortDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
 class Location extends Component {
 
 	constructor(props) {
@@ -86,6 +88,12 @@ class Location extends Component {
 }
 
 class App extends Component {
+
+	componentDidMount() {
+		var locations = JSON.parse(localStorage.getItem('locations'));
+		console.log(locations);
+	}
+
 	render() {
 		return (
 			<div>
@@ -96,8 +104,7 @@ class App extends Component {
 			</div>
 		);
 	}
-}
 
-var dayToShortDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+}
 
 export default App;
