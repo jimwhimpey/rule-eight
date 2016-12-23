@@ -14,7 +14,7 @@ class Wind extends Component {
 	render() {
 		return (<div className="inner">
 			<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-				<g transform={"rotate(" + this.props.bearing + " 20 20)"}>
+				<g transform={"rotate(" + this.props.bearing + " 20 20)"} style={{opacity: Math.max(0.2, Math.round(this.state.speed * 6) / 100)}}>
 					<polyline fill="none" points="10,15 20,3 30,15" />
 					<polyline fill="none" points="20,3 20,37" />
 				</g>
