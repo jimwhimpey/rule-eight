@@ -20,6 +20,13 @@ h2 {
 	border-bottom: 1px solid $baseColor;
 }
 
+.loading {
+	text-align: center;
+	padding: 12vh;
+	color: rgba(0,0,0,0.3);
+	border-bottom: 1px solid lighten($baseColor, 26%);
+}
+
 .forecast {
 
 	display: flex;

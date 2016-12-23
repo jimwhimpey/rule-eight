@@ -31,9 +31,7 @@ class Location extends Component {
 		if (this.state.loading) {
 			return (<li>
 				<h2>{this.state.name}</h2>
-				<ul>
-					<li>Loading</li>
-				</ul>
+				<div className="loading">Loading…</div>
 			</li>);
 		} else {
 			return (<li>
