@@ -90,17 +90,27 @@ class Location extends Component {
 class App extends Component {
 
 	componentDidMount() {
-		var locations = JSON.parse(localStorage.getItem('locations'));
-		console.log(locations);
+		this.setState({
+			locations: JSON.parse(localStorage.getItem('locations'))
+		});
 	}
 
 	render() {
+
+		var body = '';
+
+		if (this.state && this.state.locations) {
+			body = (<ul>
+				{this.state.locations.map(function(location, i) {
+					return <Location name={location.name} latlong={location.coords} key={i} />;
+				})}
+			</ul>);
+		}
+
 		return (
 			<div>
 				<h1>Rule Nine</h1>
-				<ul>
-					<Location name="San Francisco" latlong="37.757815,-122.5076401" />
-				</ul>
+				{body}
 			</div>
 		);
 	}
