@@ -10,7 +10,8 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.2rem; }
 
-h2 {
+h2,
+.add-location {
   background: #deefff;
   color: #0067c4;
   padding: 2vh 4vw;
@@ -73,6 +74,24 @@ h2 {
       .forecast .wind svg polyline {
         stroke: black;
         stroke-width: 4px; }
+
+.add-location {
+  margin-bottom: 50px; }
+  .add-location .label {
+    margin-bottom: 10px; }
+  .add-location .form {
+    display: flex; }
+    .add-location .form input, .add-location .form button {
+      display: block;
+      font-size: 20px;
+      padding: 4px 8px;
+      border: 1px solid #5eb2ff;
+      font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif; }
+    .add-location .form input {
+      flex-grow: 3; }
+    .add-location .form button {
+      flex-grow: 1.5;
+      background: #abd7ff; }
 
 @media (max-width: 480px) {
   .forecast .summary,

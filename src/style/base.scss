@@ -14,7 +14,8 @@ h1 {
 	letter-spacing: 0.2rem;
 }
 
-h2 {
+h2,
+.add-location {
 	background: lighten($baseColor, 35%);
 	color: darken($baseColor, 20%);
 	padding: 2vh $gutter * 2;
@@ -100,6 +101,30 @@ h2 {
 		}
 	}
 
+}
+
+.add-location {
+	margin-bottom: 50px;
+	.label {
+		margin-bottom: 10px;
+	}
+	.form {
+		display: flex;
+		input, button {
+			display: block;
+			font-size: 20px;
+			padding: 4px 8px;
+			border: 1px solid lighten($baseColor, 10%);
+			font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
+		}
+		input {
+			flex-grow: 3;
+		}
+		button {
+			flex-grow: 1.5;
+			background: lighten($baseColor, 25%);;
+		}
+	}
 }
 
 @media (max-width: 480px) {

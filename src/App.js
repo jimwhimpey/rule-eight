@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WeatherUnit from './WeatherUnit.js';
+import AddLocation from './AddLocation.js';
 import superagent from 'superagent';
 
 var dayToShortDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -111,6 +112,7 @@ class App extends Component {
 			<div>
 				<h1>Rule Nine</h1>
 				{body}
+				<AddLocation />
 			</div>
 		);
 	}
