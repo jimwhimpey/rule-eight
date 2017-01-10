@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import WeatherUnit from './WeatherUnit.js';
-import AddLocation from './AddLocation.js';
 import superagent from 'superagent';
 
 var dayToShortDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -21,7 +20,7 @@ class Location extends Component {
 	componentDidMount() {
 		var component = this;
 		superagent.get("http://" + window.location.host.match(/^(.+):/)[1] + ":3001/" + this.state.latlong).end(function(err, res) {
-			console.log(res);
+			// console.log(res);
 			component.setState({
 				weather: res.body,
 				loading: false,
@@ -96,6 +95,26 @@ class App extends Component {
 		});
 	}
 
+	handleAddLocation() {
+
+		var component = this;
+
+		superagent.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + document.querySelector('input').value + "&key=AIzaSyCiWJFXf3CH8Br2ebWTfo0lgZihWk-OAiQ").end(function(err, res) {
+
+			// Add new location to the locations we have
+			var locations = component.state.locations.slice();
+			locations.push({
+				name: res.body.results[0]['address_components'][0]['long_name'],
+				coords: res.body.results[0].geometry.location.lat + "," + res.body.results[0].geometry.location.lng
+			});
+			component.setState({locations: locations});
+
+			// Push it to local storage
+			localStorage.setItem('locations', JSON.stringify(component.state.locations));
+
+		});
+	}
+
 	render() {
 
 		var body = '';
@@ -112,7 +131,13 @@ class App extends Component {
 			<div>
 				<h1>Rule Nine</h1>
 				{body}
-				<AddLocation />
+				<div className="add-location">
+					<p className="label"><label>Add a location</label></p>
+					<p className="form">
+						<input type="text" />
+						<button onClick={this.handleAddLocation.bind(this)}>Add</button>
+					</p>
+				</div>
 			</div>
 		);
 	}
