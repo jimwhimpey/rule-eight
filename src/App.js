@@ -13,8 +13,10 @@ class Location extends Component {
 			unitsTemp: "\u00B0F",
 			unitsSpeed: "mph",
 			loading: true,
-			latlong: props.latlong
+			latlong: props.latlong,
+			index: props.index
 		};
+		this.upstreamRemove = props.upstreamRemove;
 	}
 
 	componentDidMount() {
@@ -29,6 +31,18 @@ class Location extends Component {
 		});
 	}
 
+	editToggle(e) {
+		if (e.target.className === 'edit') {
+			e.target.className = '';
+		} else {
+			e.target.className = 'edit';
+		}
+	}
+	handleRemove(e) {
+		// Remove this location
+		this.upstreamRemove(this.state.index);
+	}
+
 	render() {
 		if (this.state.loading) {
 			return (<li>
@@ -37,7 +51,10 @@ class Location extends Component {
 			</li>);
 		} else {
 			return (<li>
-				<h2>{this.state.name}</h2>
+				<h2 onClick={this.editToggle}>
+					{this.state.name}
+					<span onClick={this.handleRemove.bind(this)}>Remove</span>
+				</h2>
 				<ul className="forecast now_and_soon">
 					<li>
 						<h3>Now</h3>
@@ -115,15 +132,28 @@ class App extends Component {
 		});
 	}
 
+	handleRemove(index) {
+		var locations = this.state.locations.slice();
+		locations.splice(index, 1);
+		this.setState({locations: locations});
+		// Push it to local storage
+		// localStorage.setItem('locations', JSON.stringify(this.state.locations));
+	}
+
+	componentWillUpdate(nextProps, nextState) {
+		console.log("===================");
+	}
+
 	render() {
 
 		var body = '';
 
 		if (this.state && this.state.locations) {
 			body = (<ul>
-				{this.state.locations.map(function(location, i) {
-					return <Location name={location.name} latlong={location.coords} key={i} />;
-				})}
+				{this.state.locations.map((function(location, i) {
+					console.log(location.name);
+					return <Location name={location.name} latlong={location.coords} index={i} key={i} upstreamRemove={this.handleRemove.bind(this)} />;
+				}).bind(this))}
 			</ul>);
 		}
 

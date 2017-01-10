@@ -24,6 +24,17 @@ h2,
 	position: sticky;
 }
 
+h2 {
+	display: flex;
+	&.edit span { display: inline; }
+	span {
+		margin-left: auto;
+		color: #980002;
+		display: none;
+		cursor: pointer;
+	}
+}
+
 .loading {
 	text-align: center;
 	padding: 12vh;

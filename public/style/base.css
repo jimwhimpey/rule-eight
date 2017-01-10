@@ -19,6 +19,16 @@ h2,
   border-bottom: 1px solid #5eb2ff;
   position: sticky; }
 
+h2 {
+  display: flex; }
+  h2.edit span {
+    display: inline; }
+  h2 span {
+    margin-left: auto;
+    color: #980002;
+    display: none;
+    cursor: pointer; }
+
 .loading {
   text-align: center;
   padding: 12vh;
