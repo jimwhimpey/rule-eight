@@ -119,7 +119,7 @@ class App extends Component {
 		superagent.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + document.querySelector('input').value + "&key=AIzaSyCiWJFXf3CH8Br2ebWTfo0lgZihWk-OAiQ").end(function(err, res) {
 
 			// Add new location to the locations we have
-			var locations = component.state.locations.slice();
+			var locations = (component.state.locations) ? component.state.locations.slice() : [];
 			locations.push({
 				name: res.body.results[0]['address_components'][0]['long_name'],
 				coords: res.body.results[0].geometry.location.lat + "," + res.body.results[0].geometry.location.lng
@@ -137,11 +137,13 @@ class App extends Component {
 		locations.splice(index, 1);
 		this.setState({locations: locations});
 		// Push it to local storage
-		// localStorage.setItem('locations', JSON.stringify(this.state.locations));
+		// localStorage.setItem('locations', JSON.stringify(locations));
 	}
 
 	componentWillUpdate(nextProps, nextState) {
 		console.log("===================");
+		console.log("nextProps", nextProps);
+		console.log("nextState", nextState);
 	}
 
 	render() {
@@ -151,8 +153,7 @@ class App extends Component {
 		if (this.state && this.state.locations) {
 			body = (<ul>
 				{this.state.locations.map((function(location, i) {
-					console.log(location.name);
-					return <Location name={location.name} latlong={location.coords} index={i} key={i} upstreamRemove={this.handleRemove.bind(this)} />;
+					return <Location name={location.name} latlong={location.coords} index={i} key={(location.name + "_" + i)} upstreamRemove={this.handleRemove.bind(this)} />;
 				}).bind(this))}
 			</ul>);
 		}
