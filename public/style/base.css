@@ -30,10 +30,23 @@ h2 {
     display: none;
     cursor: pointer; }
 
-.loading {
-  text-align: center;
-  padding: 12vh;
-  color: rgba(0, 0, 0, 0.3); }
+.location {
+  max-height: 80vh;
+  transition: max-height 400ms ease-in;
+  overflow: hidden; }
+  .location > div {
+    opacity: 1;
+    transition: opacity 400ms ease-in; }
+  .location.loading {
+    max-height: 30vh; }
+    .location.loading > div {
+      opacity: 0; }
+  .location.loading div {
+    height: 24vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.3); }
 
 .forecast {
   display: flex;

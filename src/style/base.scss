@@ -36,10 +36,25 @@ h2 {
 	}
 }
 
-.loading {
-	text-align: center;
-	padding: 12vh;
-	color: rgba(0,0,0,0.3);
+.location {
+	max-height: 80vh;
+	transition: max-height 400ms ease-in;
+	overflow: hidden;
+	> div {
+		opacity: 1;
+		transition: opacity 400ms ease-in;
+	}
+	&.loading {
+		max-height: 30vh;
+		> div { opacity: 0; }
+	}
+	&.loading div {
+		height: 24vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: rgba(0,0,0,0.3);
+	}
 }
 
 .forecast {
