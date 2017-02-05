@@ -98,10 +98,12 @@ h2 {
       border: 1px solid #5eb2ff;
       font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif; }
     .add-location .form input {
-      flex-grow: 3; }
+      flex-grow: 3;
+      margin-right: -16px; }
     .add-location .form button {
       flex-grow: 1.5;
-      background: #abd7ff; }
+      background: #abd7ff;
+      margin-left: -16px; }
 
 @media (max-width: 480px) {
   .forecast .summary,
