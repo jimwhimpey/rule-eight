@@ -26,6 +26,7 @@ h2,
 
 h2 {
 	display: flex;
+	position: sticky;
 	&.edit span { display: inline; }
 	span {
 		margin-left: auto;

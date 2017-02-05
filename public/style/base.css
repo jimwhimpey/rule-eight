@@ -20,7 +20,8 @@ h2,
   position: sticky; }
 
 h2 {
-  display: flex; }
+  display: flex;
+  position: sticky; }
   h2.edit span {
     display: inline; }
   h2 span {
