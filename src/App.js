@@ -129,6 +129,9 @@ class App extends Component {
 			// Push it to local storage
 			localStorage.setItem('locations', JSON.stringify(component.state.locations));
 
+			// Reset the field value
+			document.querySelector('input').value = "";
+
 		});
 	}
 
@@ -138,12 +141,6 @@ class App extends Component {
 		this.setState({locations: locations});
 		// Push it to local storage
 		// localStorage.setItem('locations', JSON.stringify(locations));
-	}
-
-	componentWillUpdate(nextProps, nextState) {
-		console.log("===================");
-		console.log("nextProps", nextProps);
-		console.log("nextState", nextState);
 	}
 
 	render() {
