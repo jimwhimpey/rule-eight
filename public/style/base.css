@@ -88,7 +88,8 @@ h2 {
       padding: 0 0 2vh;
       font-size: 0.8rem; }
       .forecast .wind .speed .units {
-        color: #999999;
+        margin-left: 2px;
+        color: #e6e6e6;
         font-size: 0.8rem; }
     .forecast .wind svg {
       transform: scale(0.6);
