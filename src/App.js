@@ -13,11 +13,18 @@ class App extends Component {
 		});
 	}
 
-	handleAddLocation() {
+	handleAddLocation(e) {
+
+		e.preventDefault();
 
 		var component = this;
 
 		superagent.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + document.querySelector('input').value + "&key=AIzaSyCiWJFXf3CH8Br2ebWTfo0lgZihWk-OAiQ").end(function(err, res) {
+
+			if (err) {
+				console.error("Error", err);
+				return;
+			}
 
 			// Add new location to the locations we have
 			var locations = (component.state.locations) ? component.state.locations.slice() : [];
@@ -61,11 +68,11 @@ class App extends Component {
 				<h1>Rule Nine</h1>
 				{body}
 				<div className="add-location">
-					<p className="label"><label>Add a location</label></p>
-					<p className="form">
-						<input type="text" />
-						<button onClick={this.handleAddLocation.bind(this)}>Add</button>
-					</p>
+					<form onSubmit={this.handleAddLocation.bind(this)}>
+						<p className="form">
+							<input type="text" placeholder="Add a location" />
+						</p>
+					</form>
 				</div>
 			</div>
 		);
