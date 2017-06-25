@@ -69,9 +69,7 @@ class App extends Component {
 				{body}
 				<div className="add-location">
 					<form onSubmit={this.handleAddLocation.bind(this)}>
-						<p className="form">
-							<input type="text" placeholder="Add a location" />
-						</p>
+						<input type="text" placeholder="New location, eg. Portland" />
 					</form>
 				</div>
 			</div>

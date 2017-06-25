@@ -10,8 +10,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.2rem; }
 
-h2,
-.add-location {
+h2 {
   background: #deefff;
   color: #0067c4;
   padding: 2vh 4vw;
@@ -100,24 +99,27 @@ h2 {
         stroke-width: 4px; }
 
 .add-location {
-  margin-bottom: 50px; }
-  .add-location .label {
-    margin-bottom: 10px; }
-  .add-location .form {
+  margin-bottom: 50px;
+  padding: 20px 0 0 0;
+  border-top: 1px solid #0081f7; }
+  .add-location form {
     display: flex; }
-    .add-location .form input, .add-location .form button {
-      display: block;
-      font-size: 20px;
-      padding: 4px 8px;
-      border: 1px solid #5eb2ff;
-      font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif; }
-    .add-location .form input {
-      flex-grow: 3;
-      width: calc(100% - 16px);
-      margin-right: 10px; }
-    .add-location .form button {
-      flex-grow: 1.5;
-      background: #abd7ff; }
+  .add-location input {
+    flex: 1 1 0;
+    font-size: 20px;
+    padding: 8px 12px;
+    border: 1px solid #CCC;
+    font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
+    margin: 0 20px;
+    box-shadow: 0 0 5px 0 #EBEBEB;
+    border-radius: 2px;
+    border: 1px solid #EBEBEB; }
+    .add-location input::placeholder {
+      color: #EBEBEB; }
+    .add-location input:focus {
+      outline: none;
+      border: 1px solid #999;
+      box-shadow: 0 0 10px 0 #CCC; }
 
 @media (max-width: 480px) {
   .forecast .summary,
