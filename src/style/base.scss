@@ -1,17 +1,20 @@
 $baseColor: #2b9aff;
 $gutter: 2vw;
+$purple: #3c368e;
+$blue: #5fdbfe;
+$pink: #ffcdfa;
+$font-family: "Operator Mono Light Italic", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
 
 body {
-	font-family: "Operator Mono Light", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
+	font-family: $font-family;
 }
 
 h1 {
 	padding: 2vh $gutter * 2;
-	background: lighten($baseColor, 25%);
-	color: darken($baseColor, 20%);
-	font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 0.2rem;
+	color: lighten($purple, 20%);
+	font-family: $font-family;
+	font-style: italic;
+	span { color: lighten($purple, 40%) }
 }
 
 h2 {
