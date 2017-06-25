@@ -64,8 +64,7 @@ h2 {
   .forecast .temp {
     padding: 1vh 0; }
     .forecast .temp .units {
-      color: #999999;
-      font-size: 0.8rem; }
+      color: #e6e6e6; }
     .forecast .temp.temp_min {
       color: #00a1df;
       padding-bottom: 0.2vh; }

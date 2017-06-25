@@ -82,10 +82,7 @@ h2 {
 
 	.temp {
 		padding: 1vh 0;
-		.units {
-			color: lighten(#000, 60%);
-			font-size: 0.8rem;
-		}
+		.units { color: lighten(#000, 90%); }
 		&.temp_min {
 			color: #00a1df;
 			padding-bottom: 0.2vh;
