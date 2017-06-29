@@ -79,10 +79,10 @@ h2 {
       color: #b3b3b3; }
     .forecast .temp.temp_min {
       color: #00a1df;
-      padding-bottom: 0.2vh; }
+      padding-top: 0.2vh; }
     .forecast .temp.temp_max {
       color: #8b0000;
-      padding-top: 0.2vh; }
+      padding-bottom: 0.2vh; }
   .forecast .rain_chance {
     padding: 0.2vh 0 1vh 0; }
     .forecast .rain_chance:before {

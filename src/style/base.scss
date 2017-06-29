@@ -97,11 +97,11 @@ h2 {
 		.units { color: lighten(#000, 70%); }
 		&.temp_min {
 			color: #00a1df;
-			padding-bottom: 0.2vh;
+			padding-top: 0.2vh;
 		}
 		&.temp_max {
 			color: #8b0000;
-			padding-top: 0.2vh;
+			padding-bottom: 0.2vh;
 		}
 	}
 
