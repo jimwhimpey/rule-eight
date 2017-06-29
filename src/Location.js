@@ -43,11 +43,26 @@ class Location extends Component {
 		this.upstreamRemove(this.state.index);
 	}
 
+	/**
+	 * Takes a timestamp and returns a short time
+	 * @return {String} a short time, eg. 7pm or 1am
+	 */
+	shortTime(ts) {
+		const date = new Date(ts * 1000);
+		const hours = date.getHours();
+		const ampm = (hours < 12) ? 'am' : 'pm';
+		let display_hours = (hours <= 12) ? hours : hours - 12;
+		display_hours = (hours === 0) ? 12 : display_hours;
+		return display_hours + ampm;
+	}
+
 	render() {
 
 		// Build the classes this location will use
 		const componentClasses = ['location'];
 		if (this.state.loading) { componentClasses.push('loading'); }
+
+		console.log(this.state);
 
 		// Build this separately so we can have a single return value
 		let body = null;
@@ -61,19 +76,19 @@ class Location extends Component {
 						<WeatherUnit data={this.state.weather.currently} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
-						<h3>+1hr</h3>
+						<h3>{this.shortTime(this.state.weather.hourly.data[0].time)}</h3>
 						<WeatherUnit data={this.state.weather.hourly.data[0]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
-						<h3>+2hrs</h3>
+						<h3>{this.shortTime(this.state.weather.hourly.data[1].time)}</h3>
 						<WeatherUnit data={this.state.weather.hourly.data[1]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
-						<h3>+4hrs</h3>
+						<h3>{this.shortTime(this.state.weather.hourly.data[4].time)}</h3>
 						<WeatherUnit data={this.state.weather.hourly.data[4]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 					<li>
-						<h3>+8hrs</h3>
+						<h3>{this.shortTime(this.state.weather.hourly.data[8].time)}</h3>
 						<WeatherUnit data={this.state.weather.hourly.data[8]} unitsTemp={this.state.unitsTemp} unitsSpeed={this.state.unitsSpeed} />
 					</li>
 				</ul>
