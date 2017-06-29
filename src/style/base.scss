@@ -69,7 +69,7 @@ h2 {
 
 	li { flex: 1 1 auto; }
 	h3 {
-		padding: 2vh $gutter 1vh;
+		padding: 1.5vh $gutter 0.5vh;
 		font-size: 0.8rem;
 	}
 
@@ -137,7 +137,7 @@ h2 {
 	input {
 		flex: 1 1 0;
 		font-size: 20px;
-		padding: 8px 12px;
+		padding: 8px $gutter;
 		border: 1px solid #CCC;
 		font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
 		margin: 0 20px;

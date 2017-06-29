@@ -55,7 +55,7 @@ h2 {
   .forecast li {
     flex: 1 1 auto; }
   .forecast h3 {
-    padding: 2vh 2vw 1vh;
+    padding: 1.5vh 2vw 0.5vh;
     font-size: 0.8rem; }
   .forecast .icon {
     font-size: 34px;
@@ -105,7 +105,7 @@ h2 {
   .add-location input {
     flex: 1 1 0;
     font-size: 20px;
-    padding: 8px 12px;
+    padding: 8px 2vw;
     border: 1px solid #CCC;
     font-family: "Operator Mono Medium", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
     margin: 0 20px;
