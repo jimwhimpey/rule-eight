@@ -49,13 +49,26 @@ h2 {
 .forecast {
   display: flex;
   flex-direction: row;
-  text-align: center; }
+  text-align: center;
+  padding: 2vh 0;
+  position: relative; }
   .forecast.now_and_soon {
-    border-bottom: 1px solid #b0d9ff; }
+    padding-bottom: 3vh; }
+  .forecast.later {
+    padding-top: 3vh; }
+  .forecast.now_and_soon::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    bottom: 0;
+    left: 2vw;
+    right: 2vw;
+    background: #e6e6e6; }
   .forecast li {
     flex: 1 1 auto; }
   .forecast h3 {
-    padding: 1.5vh 2vw 0.5vh;
+    padding: 0 2vw 0.5vh;
     font-size: 0.8rem; }
   .forecast .icon {
     font-size: 34px;
@@ -84,7 +97,6 @@ h2 {
     text-align: center; }
     .forecast .wind .speed {
       margin: -5px 0 0 0;
-      padding: 0 0 2vh;
       font-size: 0.8rem; }
       .forecast .wind .speed .units {
         margin-left: 2px;
