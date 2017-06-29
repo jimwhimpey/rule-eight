@@ -63,7 +63,7 @@ h2 {
   .forecast .temp {
     padding: 1vh 0; }
     .forecast .temp .units {
-      color: #cccccc; }
+      color: #b3b3b3; }
     .forecast .temp.temp_min {
       color: #00a1df;
       padding-bottom: 0.2vh; }
@@ -88,7 +88,7 @@ h2 {
       font-size: 0.8rem; }
       .forecast .wind .speed .units {
         margin-left: 2px;
-        color: #e6e6e6;
+        color: #b3b3b3;
         font-size: 0.8rem; }
     .forecast .wind svg {
       transform: scale(0.6);
