@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
-  font-family: "Operator Mono Light Italic", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif; }
+  font-family: "Operator Mono Light Italic", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px; }
 
 h1 {
   padding: 2vh 4vw;
@@ -11,16 +12,14 @@ h1 {
     color: #b3afe1; }
 
 h2 {
-  background: #deefff;
-  color: #0067c4;
+  color: #017190;
   padding: 2vh 4vw;
-  border-top: 1px solid #5eb2ff;
-  border-bottom: 1px solid #5eb2ff;
-  position: sticky; }
-
-h2 {
-  display: flex;
-  position: sticky; }
+  border-top: 1px solid #017190;
+  border-bottom: 1px solid #017190;
+  background: #f7fdff;
+  position: sticky;
+  font-size: 1.2rem;
+  display: flex; }
   h2.edit span {
     display: inline; }
   h2 span {
@@ -64,7 +63,7 @@ h2 {
   .forecast .temp {
     padding: 1vh 0; }
     .forecast .temp .units {
-      color: #e6e6e6; }
+      color: #cccccc; }
     .forecast .temp.temp_min {
       color: #00a1df;
       padding-bottom: 0.2vh; }
@@ -100,8 +99,7 @@ h2 {
 
 .add-location {
   margin-bottom: 50px;
-  padding: 20px 0 0 0;
-  border-top: 1px solid #0081f7; }
+  padding: 20px 0 0 0; }
   .add-location form {
     display: flex; }
   .add-location input {

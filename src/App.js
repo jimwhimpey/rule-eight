@@ -29,7 +29,7 @@ class App extends Component {
 			// Add new location to the locations we have
 			var locations = (component.state.locations) ? component.state.locations.slice() : [];
 			locations.push({
-				name: res.body.results[0]['address_components'][0]['long_name'],
+				name: res.body.results[0]['address_components'][0]['long_name'] + ', ' + res.body.results[0]['address_components'][2]['short_name'],
 				coords: res.body.results[0].geometry.location.lat + "," + res.body.results[0].geometry.location.lng
 			});
 			component.setState({locations: locations});
