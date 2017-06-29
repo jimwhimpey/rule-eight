@@ -17,9 +17,10 @@ h2 {
   border-top: 1px solid #017190;
   border-bottom: 1px solid #017190;
   background: #f7fdff;
+  position: -webkit-sticky;
   position: sticky;
-  font-size: 1.2rem;
-  display: flex; }
+  top: 0;
+  font-size: 1.2rem; }
   h2.edit span {
     display: inline; }
   h2 span {
@@ -30,8 +31,7 @@ h2 {
 
 .location {
   max-height: 80vh;
-  transition: max-height 400ms ease-in;
-  overflow: hidden; }
+  transition: max-height 400ms ease-in; }
   .location > div {
     opacity: 1;
     transition: opacity 400ms ease-in; }
