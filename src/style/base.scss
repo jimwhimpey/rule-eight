@@ -92,9 +92,9 @@ h2 {
 	}
 
 	.rain_chance {
-		padding: 1vh 0;
+		padding: 0.2vh 0 1vh 0;
 		&:before {
-			content: "☂️";
+			content: "💦";
 			filter: grayscale(100%);
 			opacity: 0.5;
 			font-size: 0.7rem;
