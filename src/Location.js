@@ -21,13 +21,13 @@ class Location extends Component {
 
 	componentDidMount() {
 		var component = this;
-		// superagent.get("http://" + window.location.host.match(/^(.+):/)[1] + ":3001/" + this.state.latlong).end(function(err, res) {
-		// 	component.setState({
-		// 		weather: res.body,
-		// 		loading: false,
-		// 		units: component.state.units
-		// 	});
-		// });
+		superagent.get("http://" + window.location.host.match(/^(.+):/)[1] + ":3001/" + this.state.latlong).end(function(err, res) {
+			component.setState({
+				weather: res.body,
+				loading: false,
+				units: component.state.units
+			});
+		});
 	}
 
 	editToggle(e) {

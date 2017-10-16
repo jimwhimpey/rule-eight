@@ -55,6 +55,13 @@ h2 {
       /* ascii code for the ellipsis character */
       width: 0; }
 
+.loading-enter ul {
+  opacity: 0; }
+
+.loading-enter.loading-active ul {
+  opacity: 1;
+  transition: opacity 4000ms ease-in; }
+
 .forecast {
   display: flex;
   flex-direction: row;

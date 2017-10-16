@@ -11,6 +11,7 @@
     "express": "^4.14.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
+    "react-transition-group": "^1.2.1",
     "superagent": "^2.3.0"
   },
   "scripts": {
