@@ -4,6 +4,7 @@ $purple: #3c368e;
 $blue: #5fdbfe;
 $pink: #ffcdfa;
 $font-family: "Operator Mono Light Italic", Menlo, "Monaco", "Helvetica Neue", Helvetica, sans-serif;
+$headerHeight: 42px;
 
 body {
 	font-family: $font-family;
@@ -19,8 +20,12 @@ h1 {
 }
 
 h2 {
-	color: darken($blue, 40%);
-	padding: 2vh $gutter * 2;
+	color: darken($blue, 40%);;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	padding-left: $gutter * 2;
+	height: $headerHeight;
 	background: lighten($blue, 30%);
 	position: -webkit-sticky;
 	position: sticky;
@@ -37,22 +42,28 @@ h2 {
 }
 
 .location {
-	max-height: 80vh;
-	transition: max-height 400ms ease-in;
-	> div {
-		opacity: 1;
-		transition: opacity 400ms ease-in;
-	}
+	height: 450px;
+	transition: height 4000ms ease-in;
+	overflow: hidden;
 	&.loading {
-		max-height: 30vh;
-		> div { opacity: 0; }
+		height: 200px + $headerHeight;
 	}
 	&.loading div {
-		height: 24vh;
+		height: 200px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		color: rgba(0,0,0,0.3);
+		&:after {
+			position: absolute;
+			overflow: hidden;
+			display: inline-block;
+			vertical-align: bottom;
+			-webkit-animation: ellipsis steps(4,end) 2000ms infinite;
+			animation: ellipsis steps(4,end) 2000ms infinite;
+			content: "..."; /* ascii code for the ellipsis character */
+			width: 0;
+	  }
 	}
 }
 
@@ -172,4 +183,13 @@ h2 {
 		.summary,
 		.label { display: none; }
 	}
+}
+
+
+@keyframes ellipsis {
+	to { width: 2.4em; }
+}
+
+@-webkit-keyframes ellipsis {
+	to { width: 2.4em; }
 }

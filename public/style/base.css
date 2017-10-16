@@ -13,7 +13,11 @@ h1 {
 
 h2 {
   color: #017190;
-  padding: 2vh 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 4vw;
+  height: 42px;
   background: #f7fdff;
   position: -webkit-sticky;
   position: sticky;
@@ -29,21 +33,27 @@ h2 {
     cursor: pointer; }
 
 .location {
-  max-height: 80vh;
-  transition: max-height 400ms ease-in; }
-  .location > div {
-    opacity: 1;
-    transition: opacity 400ms ease-in; }
+  height: 450px;
+  transition: height 4000ms ease-in;
+  overflow: hidden; }
   .location.loading {
-    max-height: 30vh; }
-    .location.loading > div {
-      opacity: 0; }
+    height: 242px; }
   .location.loading div {
-    height: 24vh;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgba(0, 0, 0, 0.3); }
+    .location.loading div:after {
+      position: absolute;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+      -webkit-animation: ellipsis steps(4, end) 2000ms infinite;
+      animation: ellipsis steps(4, end) 2000ms infinite;
+      content: "...";
+      /* ascii code for the ellipsis character */
+      width: 0; }
 
 .forecast {
   display: flex;
@@ -134,3 +144,11 @@ h2 {
   .forecast .summary,
   .forecast .label {
     display: none; } }
+
+@keyframes ellipsis {
+  to {
+    width: 2.4em; } }
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 2.4em; } }

@@ -21,14 +21,13 @@ class Location extends Component {
 
 	componentDidMount() {
 		var component = this;
-		superagent.get("http://" + window.location.host.match(/^(.+):/)[1] + ":3001/" + this.state.latlong).end(function(err, res) {
-			// console.log(res);
-			component.setState({
-				weather: res.body,
-				loading: false,
-				units: component.state.units
-			});
-		});
+		// superagent.get("http://" + window.location.host.match(/^(.+):/)[1] + ":3001/" + this.state.latlong).end(function(err, res) {
+		// 	component.setState({
+		// 		weather: res.body,
+		// 		loading: false,
+		// 		units: component.state.units
+		// 	});
+		// });
 	}
 
 	editToggle(e) {
@@ -67,7 +66,7 @@ class Location extends Component {
 		// Build this separately so we can have a single return value
 		let body = null;
 		if (this.state.loading) {
-			body = (<div>Loading…</div>);
+			body = (<div>Loading forecast</div>);
 		} else {
 			body = (<div>
 				<ul className="forecast now_and_soon">
