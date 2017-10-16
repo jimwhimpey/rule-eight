@@ -65,7 +65,7 @@ class App extends Component {
 
 		return (
 			<div>
-				<h1>Rule Nine <span>Weather Forecasting</span></h1>
+				<h1>Rule Nine <span>Weather Forecast</span></h1>
 				{body}
 				<div className="add-location">
 					<form onSubmit={this.handleAddLocation.bind(this)}>
